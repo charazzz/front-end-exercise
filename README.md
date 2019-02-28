@@ -10,23 +10,23 @@ Table of Contents
     Authors
 
 
-About
+**About
 
 This is a vanilla Js coding challenge with sessionStorage function
 
 
-Getting Started
+**Getting Started
 
 Just open the index.html file with a Browser (Google Chrome is preferred)
 
 
-Prerequisites
+**Prerequisites
 
 Browser
 Internet connection
 
 
-Instructions
+**Instructions
 
 This app is responsive. On devices with width < 850px the navigation menu is hidden and after 850px it gets fixed on the left of the screen.
 
@@ -45,19 +45,19 @@ The user can add new users just by pressing the add new button in order to fetch
 All the data are being stored to the sessionStorage so that the user can have access to them during the session.
 
 
-Built With
+**Built With
 
 HTML,
 CSS,
 JS,
 
 
-Authors
+**Authors
 
 Chara Zogkou
 
 
-Starting Code
+**Starting Code
 
 No starting code was provided
 
