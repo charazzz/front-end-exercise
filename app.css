@@ -1,0 +1,501 @@
+/************ COLORS ************/
+
+/*
+    white: #ffffff
+    black: #000000
+    blue: #006bfD
+    lightblue: #4a96ff
+    grey: #e9ecee
+    red: #d32f2f
+*/
+
+/********************************/
+
+/* START: CODE */
+
+/* <---------------- GENERAL ------------------->  */
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.app {
+    height: calc(var(--vh, 1vh) * 100);
+}
+
+/* <---------------- HEADER ------------------->  */
+
+.header-container {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    padding: 10px 0;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    box-shadow: 3px 5px 2px -3px rgba(130, 130, 130, 1);
+    background-color: #fff;
+}
+
+.header-container h1 {
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: start;
+    align-self: center;
+}
+
+.openbtn {
+    cursor: pointer;
+    margin-left: 15px;
+    grid-area: 1 / 1 / 2 / 2;
+    align-self: center;
+}
+
+.menuItems {
+    display: block;
+    width: 28px;
+    height: 4px;
+    background-color: black;
+    border-radius: 2px;
+    margin: 4px 0;
+}
+
+.arrow {
+    font-size: 25px;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+/* <---------------- NAV ------------------->  */
+
+.nav {
+    position: fixed;
+    height: 100%;
+    width: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    background-color: #e9ecee;
+    overflow-x: hidden;
+    transition: 0.5s;
+    box-shadow: 9px 2px 5px 0px rgba(201,201,201,1);
+}
+
+.nav ul {
+    list-style: none;
+}
+
+.nav a {
+    display: block;
+    padding: 8px 8px 8px 32px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.nav a:hover,
+.nav a:active {
+    color: #006bfD;
+}
+
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    margin-left: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.closebtn:hover {
+    transform: scale(1.2);
+}
+
+.logo {
+    box-sizing: initial;
+    width: 35px;
+    height: 35px;
+    padding: 8px 8px 8px 32px;
+    margin-bottom: 10px;
+    ;
+    cursor: pointer;
+}
+
+/* <---------------- MAIN ------------------->  */
+
+.main {
+    padding: 5px;
+    padding-top: 70px;
+    min-width: 400px;
+}
+
+.main ul {
+    list-style: none;
+    padding: 8px;
+    display: grid;
+    min-height: 50px;
+}
+
+
+.main li {
+    word-wrap: break-word;
+    align-self: start;
+    min-width: 100px;
+    max-width: 250px;
+    padding: 0 10px;
+    align-self: center;
+}
+
+.results {
+    justify-content: space-evenly;
+}
+
+/* <---------------- BUTTONS ------------------->  */
+
+button {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 32px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #000;
+    border: 2px solid black;
+    background-color: #fff;
+    text-align: center;
+    transition: all 0.2s;
+    min-width: 75px;
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+button:hover {
+    background-color: #d6d6d6;
+    box-shadow: 9px 9px 110px -9px rgba(0, 0, 0, 0.75);
+}
+
+/* <---------------- INPUTS ------------------->  */
+
+input[type="checkbox"] {
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    outline: 0;
+    background: lightgray;
+    height: 18px;
+    width: 18px;
+    border-radius: 3px;
+}
+
+input[type="checkbox"]:checked {
+    background: #2aa1c0;
+}
+
+input[type="checkbox"]:hover {
+    filter: brightness(90%);
+}
+
+input[type="checkbox"]:after {
+    content: '\2714';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    color: #fff;
+    display: block;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 14px;
+    display: none;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+    border-radius: 3px;
+}
+
+/* <---------------- LOADERS ------------------->  */
+
+.loader1 {
+    position: fixed;
+    top: 25%;
+    left: 50%;
+    color: #4a96ff;
+    font-size: 10px;
+    margin: 100px auto;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    text-indent: -9999em;
+    animation: loader1 1.3s infinite linear;
+    transform: translateZ(0);
+}
+
+.loader2 {
+    height: 4px;
+    width: 40%;
+    max-width: 150px;
+    position: fixed;
+    top: 45%;
+    left: 35%;
+    overflow: hidden;
+    background-color: #89c0e6;
+    display: none;
+}
+
+.loader2:before {
+    display: block;
+    position: absolute;
+    content: "";
+    left: -200px;
+    width: 200px;
+    height: 4px;
+    background-color: #2980b9;
+    animation: loader2 2s linear infinite;
+}
+
+/* <---------------- HORIZONTAL RULE ------------------->  */
+
+hr {
+    border-bottom: 1px solid lightgrey;
+}
+
+/* <--------------------- FORM ----------------------->  */
+
+.addUser {
+    position: relative;
+    margin: 20px 10px;
+    height: 100px;
+}
+
+.addUserInput {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid grey;
+    box-sizing: border-box;
+    color: grey;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 30px;
+    outline: none !important;
+    opacity: 0.6;
+    padding: 15px 0;
+    padding-left: 10px;
+    width: 100%;
+    text-transform: capitalize;
+}
+
+/* <---------------- ADDED CLASSES ------------------->  */
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: inline;
+}
+
+.blur {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.btnBlur {
+    background-color: rgba(0, 0, 0, 0.4);
+    color: grey;
+}
+
+.checkedBg {
+    background-color: #e9ecee;
+}
+
+.add_new {
+    width: 200px;
+    font-size: 14px;
+    display: flex;
+}
+
+@keyframes loader1 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes loader2 {
+    from {
+        left: -200px;
+        width: 30%;
+    }
+    50% {
+        width: 30%;
+    }
+    70% {
+        width: 70%;
+    }
+    80% {
+        left: 50%;
+    }
+    95% {
+        left: 120%;
+    }
+    to {
+        left: 100%;
+    }
+}
+
+/* ---------- MEDIA QUERIES ------------ */
+
+/* a big breakpoint when we have a 500px screen */
+@media (min-width: 500px) {
+    /* <------------- HEADER ------------------->  */
+    .header-container {
+        height: 80px;
+    }
+    
+    .header-container h1 {
+        font-size: 35px;
+    }
+
+    .menuItems {
+        width: 30px;
+        height: 5px;
+        margin: 5px 0;
+    }
+
+    .add_new, .arrow {
+        font-size: 30px;
+    }
+
+    /* <---------------- NAV ------------------->  */
+    .nav a {
+        font-size: 20px;
+    }
+
+    .closebtn {
+        font-size: 30px;
+    }
+
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* <---------------- MAIN ------------------->  */
+    .main {
+        padding-top: 90px;
+    }
+    .main li {
+        font-size: 18px;
+    }
+
+    /* <---------------- BUTTONS ------------------->  */
+    button {
+        top: 27px;
+        font-size: 16px;
+        width: 90px;
+    }
+
+    
+/* <--------------------- FORM ----------------------->  */
+
+.addUser {
+    height: 120px;
+    font-size: 18px;
+}
+}
+/* a small loader when we have a 850px screen */
+@media (min-width: 600px) { .loader2 { left: 40%;}}
+
+/* a small breakpoint when we have a 850px screen */
+@media (min-width: 850px) {
+
+    body, header {
+        padding-left: 200px;
+    }
+
+    .header-container {
+        display: inline;
+    }
+    
+    .header-container h1 {
+        margin-left: 220px;
+    }
+
+    .nav {
+        width: 200px;
+        padding-top: 20px;
+        position: fixed;
+        left: 0;
+        top: 0;
+    }
+
+    .openbtn, .closebtn {
+        display: none;
+    }
+
+    .main li {
+        min-width: 230px;
+        max-width: 420px;
+        font-size: 17px;
+    }
+
+    .add_new h1 {
+        margin-left: 0;
+    }
+
+    .addUser {
+        font-size: 24px;
+    }
+
+    .loader1 {
+        top: 32%;
+        left: 55%;
+    }
+
+    .loader2 {
+        left: 50%;
+    }
+}

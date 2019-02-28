@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>APP</title>
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <!-- STYLE -->
+    <link href="app.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <!-- START: CODE -->
+        <div class="loader1">Loading...</div>
+        <header>
+            <div class="header-container">
+                <div tabindex="1" class="openbtn" aria-label="Open sidebar">
+                    <span class="menuItems"></span>
+                    <span class="menuItems"></span>
+                    <span class="menuItems"></span>
+                </div>
+                <h1>Welcome</h1>
+            </div>
+        </header>
+        <nav class="nav">
+            <ul>
+                <img src="logo.svg" alt="logo" class="logo" aria-label="Go to welcome page">
+                <li tabindex="0"><a href="#" class="customers">Customers</a></li>
+                <li tabindex="0"><a href="#" class="products">Products</a></li>
+                <li tabindex="0"><a href="#" class="users">Users</a></li>
+            </ul>
+            <span tabindex="0" class="closebtn" aria-label="Close sidebar">x</span>
+        </nav>
+        <div class="loader2"></div>
+        <section class="main">
+            <div class="results"></div>
+        </section>
+        <!-- END: CODE -->
+
+        <!-- SCRIPT -->
+        <script src="app.js"></script>
+</body>
+
+</html>
