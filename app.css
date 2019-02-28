@@ -446,7 +446,7 @@ hr {
     font-size: 18px;
 }
 }
-/* a small loader when we have a 850px screen */
+/* a small loader when we have a 600px screen */
 @media (min-width: 600px) { .loader2 { left: 40%;}}
 
 /* a small breakpoint when we have a 850px screen */
